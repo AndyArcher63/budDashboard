@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import Summary from './components/Summary';
+import Transactions from './components/Transactions';
+import getAccountRequest from './api/requests';
 import './App.css';
 
 class App extends Component {
-  state = {}
+  state = {
+    accountDetails: {},
+  }
+
+  componentDidMount() {
+    this.getAccount();
+  }
+
+  async getAccount() {
+    const results = await getAccountRequest();
+
+    this.setState({
+      accountDetails: results.data,
+    });
+  }
 
   render() {
+    const { accountDetails } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit
-            {' '}
-            <code>src/App.js</code>
-            {' '}
-            and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Summary accountInfo={accountDetails.provider} balance={accountDetails.balance} />
+        <Transactions transactions={accountDetails.transactions} />
       </div>
     );
   }

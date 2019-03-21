@@ -1,0 +1,34 @@
+$moduleSpacing: 20px;
+.transactionItem{
+  list-style:none;
+  border-bottom: 1px solid #999;
+  padding: $moduleSpacing;
+  margin-bottom: $moduleSpacing;
+  background: #eee;
+
+  > * {
+    margin-bottom: 5px;
+    display: block;
+  }
+}
+
+.value {
+  color:#bf1e13;
+  font-size: 110%;
+}
+
+.desc {
+  font-weight: bold;
+}
+
+.title {
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+
+.date {
+  color: #666;
+  font-size: 80%;
+  font-style: italic;
+  display: block;
+}

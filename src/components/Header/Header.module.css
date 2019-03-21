@@ -1,0 +1,9 @@
+.titleWrapper {
+  background: #666;
+  color: #fff;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+.title {
+  font-weight: normal;
+}
