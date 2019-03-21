@@ -15,11 +15,11 @@ const Summary = (props) => {
           {accountInfo.account_number}
         </li>
         <li>
-          <strong>Sort Code</strong>
+          <strong>Sort Code </strong>
           {accountInfo.sort_code}
         </li>
         <li>
-          <strong>Current Balance: </strong>
+          <strong>Current Balance </strong>
           {`£${balance.amount}`}
         </li>
       </ul>
