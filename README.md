@@ -1,4 +1,4 @@
-# Bud Dashboard
+# Smallest Expenses Dashboard
 ## Requirements
 1) Query an api
 2) Show only the 10 smallest expenses 
