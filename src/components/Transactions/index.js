@@ -13,7 +13,9 @@ const Transactions = (props) => {
     <Transaction key={item.id} transaction={item} />
   ));
   return (
-    <ul className={Classes.transactions}>{transactionsList}</ul>
+    <ul className={Classes.transactions}>
+      {transactionsList}
+    </ul>
   );
 };
 

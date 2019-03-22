@@ -1,4 +1,4 @@
-const filterCredit = transactions => transactions.filter(
+const filterDebit = transactions => transactions.filter(
   transaction => Math.sign(transaction.amount.value) !== 1,
 );
 
@@ -15,7 +15,7 @@ const orderByLatestDate = transactions => (
 );
 
 const getList = (transactions) => {
-  const filteredTransactions = filterCredit(transactions);
+  const filteredTransactions = filterDebit(transactions);
   const orderedTransactions = orderByValue(filteredTransactions);
   const limitTransactions = limitArray(orderedTransactions, 10);
   const orderTransactionsByDate = orderByLatestDate(limitTransactions);
@@ -23,7 +23,7 @@ const getList = (transactions) => {
 };
 
 export {
-  filterCredit,
+  filterDebit,
   orderByValue,
   limitArray,
   orderByLatestDate,
